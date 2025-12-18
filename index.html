@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Быстрая доставка вкуснейшей пиццы и свежих суши. Заказывайте онлайн!">
+    <title>YamiFood - Доставка Пиццы и Суши</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="bg-orange-500 p-2 rounded-lg text-white transform group-hover:rotate-12 transition-transform">
+                        <i data-lucide="pizza" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold text-gray-900 tracking-tight">Yami<span class="text-orange-500">Food</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8 font-medium">
+                    <a href="#menu" class="hover:text-orange-500 transition-colors">Меню</a>
+                    <a href="#promo" class="hover:text-orange-500 transition-colors">Акции</a>
+                    <a href="#delivery" class="hover:text-orange-500 transition-colors">Доставка</a>
+                    <a href="#about" class="hover:text-orange-500 transition-colors">О нас</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <div class="flex flex-col items-end mr-2">
+                        <span class="text-sm text-gray-500">Ежедневно 10:00 - 23:00</span>
+                        <a href="tel:+79990000000" class="font-bold text-gray-900 hover:text-orange-500 transition-colors">+7 (999) 000-00-00</a>
+                    </div>
+                    <button class="relative p-3 bg-gray-100 rounded-full hover:bg-orange-100 text-gray-700 hover:text-orange-600 transition-colors cart-btn">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <span class="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 text-white text-xs font-bold rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <a href="#menu" class="px-6 py-2.5 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg shadow-orange-500/30">
+                        Заказать
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-orange-500 transition-colors">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+            <div class="flex flex-col p-4 gap-4">
+                <a href="#menu" class="mobile-link text-lg font-medium p-2 hover:bg-orange-50 rounded-lg text-gray-700">🍕 Меню</a>
+                <a href="#promo" class="mobile-link text-lg font-medium p-2 hover:bg-orange-50 rounded-lg text-gray-700">🎁 Акции</a>
+                <a href="#delivery" class="mobile-link text-lg font-medium p-2 hover:bg-orange-50 rounded-lg text-gray-700">🚚 Доставка</a>
+                <a href="#about" class="mobile-link text-lg font-medium p-2 hover:bg-orange-50 rounded-lg text-gray-700">ℹ️ О нас</a>
+                <hr class="border-gray-100">
+                <div class="flex justify-between items-center p-2">
+                    <span class="font-bold">+7 (999) 000-00-00</span>
+                </div>
+                <button class="w-full py-3 bg-orange-500 text-white font-bold rounded-lg shadow-md">
+                    Войти / Регистрация
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+            <div class="absolute inset-0 bg-gray-900">
+                <img src="https://placehold.co/1920x1080/1a1a1a/333333?text=Dark+Food+Background" alt="Background" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-400 font-semibold mb-6 animate-fade-in-up">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+                            Доставка за 59 минут или пицца в подарок
+                        </div>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+                            Взрыв вкуса <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">в каждой коробке</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                            Настоящая итальянская пицца на тонком тесте и японские суши из свежайших морепродуктов.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#menu" class="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl hover:bg-orange-600 transition-all transform hover:-translate-y-1 shadow-xl shadow-orange-500/20 flex items-center justify-center gap-2">
+                                <i data-lucide="utensils" class="w-5 h-5"></i>
+                                Перейти в меню
+                            </a>
+                            <a href="#promo" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="percent" class="w-5 h-5"></i>
+                                Смотреть акции
+                            </a>
+                        </div>
+                        
+                        <div class="mt-12 flex items-center justify-center md:justify-start gap-8 text-white/80">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i>
+                                <span class="font-bold">4.9</span>
+                                <span class="text-sm text-gray-400">Рейтинг</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-5 h-5 text-orange-400"></i>
+                                <span class="font-bold">59 мин</span>
+                                <span class="text-sm text-gray-400">Среднее время</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 relative hidden md:block">
+                        <!-- Decorative circle -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
+                        <img src="https://placehold.co/600x600/transparent/orange?text=Tasty+Pizza+PNG" alt="Delicious Pizza" class="relative z-10 w-full max-w-lg mx-auto transform hover:rotate-2 transition-transform duration-500 drop-shadow-2xl floating-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Slider -->
+        <section class="py-10 bg-white border-b border-gray-100 sticky top-20 z-40 shadow-sm" id="categories-nav">
+            <div class="container mx-auto px-4">
+                <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide no-scrollbar">
+                    <button class="flex items-center gap-3 px-6 py-3 bg-gray-900 text-white rounded-xl shadow-lg whitespace-nowrap hover:bg-gray-800 transition-colors">
+                        <i data-lucide="pizza" class="w-5 h-5 text-orange-400"></i>
+                        <span class="font-bold">Пицца</span>
+                    </button>
+                    <button class="flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl hover:border-orange-500 hover:text-orange-500 transition-colors whitespace-nowrap shadow-sm group">
+                        <i data-lucide="fish" class="w-5 h-5 group-hover:text-orange-500 transition-colors"></i>
+                        <span class="font-bold">Суши</span>
+                    </button>
+                    <button class="flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl hover:border-orange-500 hover:text-orange-500 transition-colors whitespace-nowrap shadow-sm group">
+                        <i data-lucide="flame" class="w-5 h-5 group-hover:text-orange-500 transition-colors"></i>
+                        <span class="font-bold">Вок</span>
+                    </button>
+                    <button class="flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl hover:border-orange-500 hover:text-orange-500 transition-colors whitespace-nowrap shadow-sm group">
+                        <i data-lucide="layers" class="w-5 h-5 group-hover:text-orange-500 transition-colors"></i>
+                        <span class="font-bold">Сеты</span>
+                    </button>
+                    <button class="flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl hover:border-orange-500 hover:text-orange-500 transition-colors whitespace-nowrap shadow-sm group">
+                        <i data-lucide="coffee" class="w-5 h-5 group-hover:text-orange-500 transition-colors"></i>
+                        <span class="font-bold">Напитки</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section: Pizza -->
+        <section id="menu" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between mb-10">
+                    <h2 class="text-3xl font-extrabold text-gray-900 flex items-center gap-3">
+                        <span class="w-10 h-1 bg-orange-500 rounded-full"></span>
+                        Пицца
+                    </h2>
+                    <a href="#" class="text-orange-600 font-semibold hover:text-orange-700 flex items-center gap-1">
+                        Смотреть все <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">ХИТ</span>
+                            <img src="https://placehold.co/600x400/FFF8F0/orange?text=Pepperoni" alt="Пепперони" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Пепперони Фреш</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">30 см, 540 г</span>
+                                    <div class="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
+                                        <button class="px-2 py-1 text-gray-500 hover:text-gray-900 font-medium text-xs rounded">Тонкое</button>
+                                        <button class="px-2 py-1 bg-white shadow-sm text-gray-900 font-medium text-xs rounded">Традиц.</button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">549 ₽</span>
+                                    <button class="px-6 py-2 bg-orange-100 text-orange-600 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 2 -->
+                    <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <span class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">НОВИНКА</span>
+                            <img src="https://placehold.co/600x400/FFF8F0/orange?text=Four+Cheese" alt="Четыре сыра" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Четыре сыра</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Сыр блю чиз, сыр моцарелла, сыр чеддер, сыр пармезан, соус альфредо.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">30 см, 490 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">629 ₽</span>
+                                    <button class="px-6 py-2 bg-orange-100 text-orange-600 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 3 -->
+                    <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/FFF8F0/orange?text=BBQ+Chicken" alt="Цыпленок Барбекю" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Цыпленок Барбекю</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Сочное куриное филе, бекон, красный лук, моцарелла, соус барбекю.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">30 см, 560 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">589 ₽</span>
+                                    <button class="px-6 py-2 bg-orange-100 text-orange-600 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                     <!-- Product Card 4 -->
+                     <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/FFF8F0/orange?text=Margarita" alt="Маргарита" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Маргарита Гурме</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Увеличенная порция моцареллы, томаты черри, итальянские травы, соус.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">30 см, 450 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">449 ₽</span>
+                                    <button class="px-6 py-2 bg-orange-100 text-orange-600 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section: Sushi -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between mb-10">
+                    <h2 class="text-3xl font-extrabold text-gray-900 flex items-center gap-3">
+                        <span class="w-10 h-1 bg-red-500 rounded-full"></span>
+                        Суши и Роллы
+                    </h2>
+                    <a href="#" class="text-orange-600 font-semibold hover:text-orange-700 flex items-center gap-1">
+                        Смотреть все <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <!-- Product Card 5 -->
+                     <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">ТОП</span>
+                            <img src="https://placehold.co/600x400/111/white?text=Philadelphia" alt="Филадельфия" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Филадельфия Люкс</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Лосось охлажденный, сливочный сыр, огурец, рис, нори.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">8 шт, 280 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">690 ₽</span>
+                                    <button class="px-6 py-2 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-red-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product Card 6 -->
+                    <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/111/white?text=California" alt="Калифорния" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Калифорния с крабом</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Снежный краб, икра масаго, авокадо, майонез, рис, нори.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">8 шт, 240 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">540 ₽</span>
+                                    <button class="px-6 py-2 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-red-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                     <!-- Product Card 7 -->
+                     <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/111/white?text=Baked+Set" alt="Запеченный сет" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Сет "Горячий Хит"</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Три вида запеченных роллов с мидиями, курицей и крабом.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">24 шт, 800 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">1290 ₽</span>
+                                    <button class="px-6 py-2 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-red-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Product Card 8 -->
+                    <article class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden group flex flex-col h-full border border-gray-100">
+                        <div class="relative overflow-hidden">
+                            <img src="https://placehold.co/600x400/111/white?text=Maki+Salmon" alt="Маки Лосось" class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Маки с лососем</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Классический ролл со свежим лососем и рисом.</p>
+                            
+                            <div class="mt-auto">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm text-gray-400">6 шт, 110 г</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-gray-900">290 ₽</span>
+                                    <button class="px-6 py-2 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-red-500 hover:text-white transition-all transform active:scale-95 add-to-cart-btn">
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo / Benefits -->
+        <section id="about" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Почему выбирают Yami<span class="text-orange-500">Food</span>?</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Мы не просто готовим еду, мы создаем настроение для вашего вечера.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i data-lucide="timer" class="w-10 h-10 text-orange-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Молниеносная доставка</h3>
+                        <p class="text-gray-400">Среднее время доставки — 45 минут. Привезем горячим или вернем деньги.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i data-lucide="leaf" class="w-10 h-10 text-orange-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Только свежие ингредиенты</h3>
+                        <p class="text-gray-400">Никакой заморозки. Покупаем продукты у проверенных фермеров каждое утро.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-20 h-20 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-500 transition-colors duration-300">
+                            <i data-lucide="gift" class="w-10 h-10 text-orange-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Бонусная программа</h3>
+                        <p class="text-gray-400">Возвращаем 10% от каждого заказа баллами, которыми можно оплатить до 100% еды.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Map Section (Conceptual) -->
+        <section id="delivery" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Зоны доставки</h2>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-gray-900">Зеленая зона</span>
+                                    <p class="text-sm text-gray-500">Бесплатно от 500₽. Доставка до 45 мин.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-gray-900">Желтая зона</span>
+                                    <p class="text-sm text-gray-500">Бесплатно от 1000₽. Доставка до 60 мин.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                </div>
+                                <div>
+                                    <span class="font-bold text-gray-900">Красная зона</span>
+                                    <p class="text-sm text-gray-500">Бесплатно от 1500₽. Доставка до 90 мин.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h4 class="font-bold mb-2">Проверьте адрес</h4>
+                            <div class="flex gap-2">
+                                <input type="text" placeholder="Введите улицу и дом" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:outline-none">
+                                <button class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                                    <i data-lucide="search" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-200 relative min-h-[400px]">
+                        <img src="https://placehold.co/800x600/e5e7eb/9ca3af?text=Map+View+Visualization" alt="Map" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="bg-white/90 px-4 py-2 rounded-lg shadow-lg text-gray-500 text-sm font-medium backdrop-blur-sm">Карта зоны доставки</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA App -->
+        <section class="py-16 bg-orange-500 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Скачайте наше приложение</h2>
+                <p class="text-orange-100 text-lg mb-8 max-w-xl mx-auto">Скидка 20% на первый заказ через приложение по промокоду <span class="bg-white text-orange-600 font-bold px-2 py-1 rounded">START</span></p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="flex items-center gap-3 px-6 py-3 bg-black rounded-xl hover:bg-gray-900 transition-colors text-left w-full sm:w-auto justify-center">
+                        <i data-lucide="apple" class="w-8 h-8"></i>
+                        <div>
+                            <div class="text-xs text-gray-400">Загрузите в</div>
+                            <div class="font-bold text-lg leading-none">App Store</div>
+                        </div>
+                    </button>
+                    <button class="flex items-center gap-3 px-6 py-3 bg-black rounded-xl hover:bg-gray-900 transition-colors text-left w-full sm:w-auto justify-center">
+                        <i data-lucide="play-circle" class="w-8 h-8"></i>
+                        <div>
+                            <div class="text-xs text-gray-400">Доступно в</div>
+                            <div class="font-bold text-lg leading-none">Google Play</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="bg-orange-500 p-2 rounded-lg text-white">
+                            <i data-lucide="pizza" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-2xl font-extrabold tracking-tight">Yami<span class="text-orange-500">Food</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                        Самая быстрая доставка любимой еды. Мы работаем, чтобы вы отдыхали вкусно.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Компания</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">О нас</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Вакансии</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Контакты</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Для партнеров</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help -->
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Помощь</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Условия доставки</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Возврат товара</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Акции</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts -->
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Контакты</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-orange-500 mt-1"></i>
+                            <span>г. Москва, ул. Ленина, д. 10</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-orange-500 mt-1"></i>
+                            <span>+7 (999) 000-00-00</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-orange-500 mt-1"></i>
+                            <span>order@yamifood.ru</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p>&copy; 2025 YamiFood. Все права защищены.</p>
+                <div class="flex gap-6">
+                    <img src="https://placehold.co/40x25/white/black?text=Visa" alt="Visa" class="h-6 opacity-50 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/40x25/white/black?text=MC" alt="Mastercard" class="h-6 opacity-50 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/40x25/white/black?text=Mir" alt="Mir" class="h-6 opacity-50 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
