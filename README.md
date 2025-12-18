@@ -1,7 +1,6 @@
 # 🚀 Landing Page
 
-Edit text: "
-                            Настоящая неаполитанс..."
+Move element: span by (71px, 333px)
 
 ## 🌐 Live Demo
 
